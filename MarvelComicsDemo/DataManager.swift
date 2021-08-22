@@ -45,11 +45,13 @@ class DataManager: NSObject, UITableViewDataSource {
                     if let returnData = String(data: responseData, encoding: .utf8) {
                         Swift.print("responseData is \(returnData)")
                     }
-                    let partnerDictionary = try JSONSerialization.jsonObject(with: responseData, options: [])
-                    
-                    // Swift.print("json is \(partnerDictionary)")
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+                    let serverResponse = try decoder.decode(ResponseFromServer.self, from: responseData)
+                    Swift.print("survived that")
+                    Swift.print("number of ersults is \(serverResponse.data.results.count)")
                 } catch let error {
-                    Swift.print("error while deserializing category data - \(error.localizedDescription)")
+                    Swift.print("error while deserializing category data - \(error)")
                 }
             } else {
                 Swift.print("no response data to work with")
