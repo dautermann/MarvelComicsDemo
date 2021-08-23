@@ -14,6 +14,7 @@ class DataManager: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         return UITableViewCell()
     }
     
@@ -48,8 +49,7 @@ class DataManager: NSObject, UITableViewDataSource {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                     let serverResponse = try decoder.decode(ResponseFromServer.self, from: responseData)
-                    Swift.print("survived that")
-                    Swift.print("number of ersults is \(serverResponse.data.results.count)")
+                    Swift.print("number of results is \(serverResponse.data.results.count)")
                 } catch let error {
                     Swift.print("error while deserializing category data - \(error)")
                 }
@@ -59,4 +59,6 @@ class DataManager: NSObject, UITableViewDataSource {
         }
         task.resume()
     }
+    
+    private var entries = [Comic]()
 }
