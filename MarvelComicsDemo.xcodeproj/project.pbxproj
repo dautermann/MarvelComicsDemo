@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2551F5B326C8A85F0098F9D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5B226C8A85F0098F9D8 /* AppDelegate.swift */; };
 		2551F5B526C8A85F0098F9D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5B426C8A85F0098F9D8 /* SceneDelegate.swift */; };
-		2551F5B726C8A85F0098F9D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5B626C8A85F0098F9D8 /* ViewController.swift */; };
+		2551F5B726C8A85F0098F9D8 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5B626C8A85F0098F9D8 /* InitialViewController.swift */; };
 		2551F5BA26C8A85F0098F9D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2551F5B826C8A85F0098F9D8 /* Main.storyboard */; };
 		2551F5BC26C8A8610098F9D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2551F5BB26C8A8610098F9D8 /* Assets.xcassets */; };
 		2551F5BF26C8A8610098F9D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2551F5BD26C8A8610098F9D8 /* LaunchScreen.storyboard */; };
@@ -46,7 +46,7 @@
 		2551F5AF26C8A85F0098F9D8 /* MarvelComicsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelComicsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2551F5B226C8A85F0098F9D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2551F5B426C8A85F0098F9D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2551F5B626C8A85F0098F9D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2551F5B626C8A85F0098F9D8 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		2551F5B926C8A85F0098F9D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2551F5BB26C8A8610098F9D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2551F5BE26C8A8610098F9D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,9 +118,7 @@
 			children = (
 				2551F5B226C8A85F0098F9D8 /* AppDelegate.swift */,
 				2551F5B426C8A85F0098F9D8 /* SceneDelegate.swift */,
-				2551F5B626C8A85F0098F9D8 /* ViewController.swift */,
-				258BB80526D3031C00362D79 /* ComicsSummaryViewController.swift */,
-				25F33CDA26D79B7000B03815 /* ComicIndividualViewController.swift */,
+				25F33CEE26D7AA6300B03815 /* ViewControllers */,
 				2551F5B826C8A85F0098F9D8 /* Main.storyboard */,
 				2551F5E526C932710098F9D8 /* ComicsDataManager.swift */,
 				25D72F3926D3489500387C0A /* EntryTableViewCell.swift */,
@@ -165,6 +163,16 @@
 				25570CC426D212B1008FE363 /* DecodableResponse.swift */,
 			);
 			path = Decodable;
+			sourceTree = "<group>";
+		};
+		25F33CEE26D7AA6300B03815 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2551F5B626C8A85F0098F9D8 /* InitialViewController.swift */,
+				258BB80526D3031C00362D79 /* ComicsSummaryViewController.swift */,
+				25F33CDA26D79B7000B03815 /* ComicIndividualViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D72F3A26D3489500387C0A /* EntryTableViewCell.swift in Sources */,
-				2551F5B726C8A85F0098F9D8 /* ViewController.swift in Sources */,
+				2551F5B726C8A85F0098F9D8 /* InitialViewController.swift in Sources */,
 				2551F5ED26C951F50098F9D8 /* MD5.swift in Sources */,
 				25F33CDB26D79B7000B03815 /* ComicIndividualViewController.swift in Sources */,
 				25F33CE626D7A94D00B03815 /* DecodableComicsResponse.swift in Sources */,

@@ -47,7 +47,7 @@ class ComicsSummaryViewController: UIViewController, UITableViewDelegate, Comics
         if !dataManager.isLoading && indexPath.row == lastElement {
             Swift.print("great time to get more data)")
             dataManager.isLoading = true
-            dataManager.getDataFor(typeOfQuery: "comics", startingWith: currentComicsCount)
+            dataManager.getData(startingWith: currentComicsCount)
         }
     }
 

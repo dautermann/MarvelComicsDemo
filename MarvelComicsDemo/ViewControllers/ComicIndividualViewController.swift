@@ -9,12 +9,6 @@ import UIKit
 
 class ComicIndividualViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     @IBOutlet var imageView: UIImageView!
 
     /// something else we could do is create a table or collection view so **all**

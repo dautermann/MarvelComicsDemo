@@ -11,6 +11,13 @@ import XCTest
 
 import SDWebImage
 
+class MockComicsDataManager {
+    var entries = [Comic]()
+    func getData(startingWith: Int) {
+        
+    }
+}
+
 class MarvelComicsDemoTests: XCTestCase {
 
     override func setUpWithError() throws {

@@ -2,12 +2,12 @@
 //  ViewController.swift
 //  MarvelComicsDemo
 //
-//  Created by Michael Dautermann on 8/14/21.
+//  Created by Michael Dautermann on 8/25/21.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class InitialViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     enum QueryType: String, CaseIterable {
         case characters = "characters"
@@ -22,7 +22,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         /// No separator lines for empty cells
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
@@ -34,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView,
                  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Reuse or create a cell.
+        /// using very basic cell style here
         let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
         if let textLabel = cell.textLabel {
             let queryString = QueryType.allCases[indexPath.row].rawValue
@@ -50,19 +49,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dataManager.getDataFor(typeOfQuery: QueryType.allCases[indexPath.row].rawValue, startingWith: 0)
+        comicsDataManager.getData(startingWith: 0)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "EntriesDetailViewSegue") {
-            // pass data to next view
+            /// pass data to next view
             if let viewController = segue.destination as? ComicsSummaryViewController {
-                viewController.comicsDataManager = dataManager
-                dataManager.delegate = viewController
+                viewController.comicsDataManager = comicsDataManager
+                comicsDataManager.delegate = viewController
             }
         }
     }
 
-    private var dataManager: ComicsDataManager = ComicsDataManager()
+    private var comicsDataManager: ComicsDataManager = ComicsDataManager()
 }
 
