@@ -6,7 +6,10 @@
 //
 
 import XCTest
+
 @testable import MarvelComicsDemo
+
+import SDWebImage
 
 class MarvelComicsDemoTests: XCTestCase {
 

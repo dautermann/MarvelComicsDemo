@@ -34,22 +34,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView,
                  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // Reuse or create a cell.
-       let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
+        // Reuse or create a cell.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
         if let textLabel = cell.textLabel {
-            textLabel.text = QueryType.allCases[indexPath.row].rawValue
+            let queryString = QueryType.allCases[indexPath.row].rawValue
+            textLabel.text = queryString
+            /// future versions of this sample app can be expanded to support more (or all) of the possible API queries!
+            let isCellEnabled = queryString == "comics"
+            cell.selectionStyle = isCellEnabled ? .blue : .none
+            textLabel.isEnabled = isCellEnabled
+            cell.isUserInteractionEnabled = isCellEnabled
         }
 
-       // cell.imageView!.image = UIImage(named: "bunny")
-       return cell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Swift.print("indexPath \(indexPath.row) selected")
-        
-        let dataManager = DataManager()
-        dataManager.getDataFor(typeOfQuery: QueryType.allCases[indexPath.row].rawValue)
+        dataManager.getDataFor(typeOfQuery: QueryType.allCases[indexPath.row].rawValue, startingWith: 0)
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "EntriesDetailViewSegue") {
+            // pass data to next view
+            if let viewController = segue.destination as? ComicsSummaryViewController {
+                viewController.comicsDataManager = dataManager
+                dataManager.delegate = viewController
+            }
+        }
+    }
+
+    private var dataManager: ComicsDataManager = ComicsDataManager()
 }
 
