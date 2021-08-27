@@ -13,11 +13,13 @@
 		2551F5BA26C8A85F0098F9D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2551F5B826C8A85F0098F9D8 /* Main.storyboard */; };
 		2551F5BC26C8A8610098F9D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2551F5BB26C8A8610098F9D8 /* Assets.xcassets */; };
 		2551F5BF26C8A8610098F9D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2551F5BD26C8A8610098F9D8 /* LaunchScreen.storyboard */; };
-		2551F5CA26C8A8620098F9D8 /* MarvelComicsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5C926C8A8620098F9D8 /* MarvelComicsDemoTests.swift */; };
+		2551F5CA26C8A8620098F9D8 /* MarvelComicsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5C926C8A8620098F9D8 /* MarvelComicsDemoTests.swift */; platformFilter = ios; };
 		2551F5D526C8A8620098F9D8 /* MarvelComicsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5D426C8A8620098F9D8 /* MarvelComicsDemoUITests.swift */; };
 		2551F5E626C932710098F9D8 /* ComicsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5E526C932710098F9D8 /* ComicsDataManager.swift */; };
 		2551F5ED26C951F50098F9D8 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551F5EC26C951F50098F9D8 /* MD5.swift */; };
 		25570CC526D212B1008FE363 /* DecodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25570CC426D212B1008FE363 /* DecodableResponse.swift */; };
+		2569FC2526D910F500DE30D5 /* ComicsDataManagerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569FC2426D910F500DE30D5 /* ComicsDataManagerTableViewDataSource.swift */; };
+		2569FC3826D9134500DE30D5 /* ValidComicData.json in Resources */ = {isa = PBXBuildFile; fileRef = 25F33CF626D7D36300B03815 /* ValidComicData.json */; };
 		258BB80626D3031C00362D79 /* ComicsSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258BB80526D3031C00362D79 /* ComicsSummaryViewController.swift */; };
 		25D72F3A26D3489500387C0A /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D72F3926D3489500387C0A /* EntryTableViewCell.swift */; };
 		25D72F4026D3693300387C0A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 25D72F3F26D3693300387C0A /* SDWebImage */; };
@@ -60,10 +62,12 @@
 		2551F5E526C932710098F9D8 /* ComicsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDataManager.swift; sourceTree = "<group>"; };
 		2551F5EC26C951F50098F9D8 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		25570CC426D212B1008FE363 /* DecodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponse.swift; sourceTree = "<group>"; };
+		2569FC2426D910F500DE30D5 /* ComicsDataManagerTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDataManagerTableViewDataSource.swift; sourceTree = "<group>"; };
 		258BB80526D3031C00362D79 /* ComicsSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsSummaryViewController.swift; sourceTree = "<group>"; };
 		25D72F3926D3489500387C0A /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		25F33CDA26D79B7000B03815 /* ComicIndividualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicIndividualViewController.swift; sourceTree = "<group>"; };
 		25F33CE526D7A94D00B03815 /* DecodableComicsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableComicsResponse.swift; sourceTree = "<group>"; };
+		25F33CF626D7D36300B03815 /* ValidComicData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ValidComicData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				25F33CEE26D7AA6300B03815 /* ViewControllers */,
 				2551F5B826C8A85F0098F9D8 /* Main.storyboard */,
 				2551F5E526C932710098F9D8 /* ComicsDataManager.swift */,
+				2569FC2426D910F500DE30D5 /* ComicsDataManagerTableViewDataSource.swift */,
 				25D72F3926D3489500387C0A /* EntryTableViewCell.swift */,
 				25F33CEA26D7A99C00B03815 /* Decodable */,
 				2551F5EC26C951F50098F9D8 /* MD5.swift */,
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2551F5C926C8A8620098F9D8 /* MarvelComicsDemoTests.swift */,
+				25F33CF626D7D36300B03815 /* ValidComicData.json */,
 				2551F5CB26C8A8620098F9D8 /* Info.plist */,
 			);
 			path = MarvelComicsDemoTests;
@@ -209,7 +215,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				25D72F5626D37C3500387C0A /* PBXTargetDependency */,
 				2551F5C726C8A8620098F9D8 /* PBXTargetDependency */,
 			);
 			name = MarvelComicsDemoTests;
@@ -287,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2569FC3826D9134500DE30D5 /* ValidComicData.json in Resources */,
 				2551F5BF26C8A8610098F9D8 /* LaunchScreen.storyboard in Resources */,
 				2551F5BC26C8A8610098F9D8 /* Assets.xcassets in Resources */,
 				2551F5BA26C8A85F0098F9D8 /* Main.storyboard in Resources */,
@@ -320,6 +326,7 @@
 				25F33CDB26D79B7000B03815 /* ComicIndividualViewController.swift in Sources */,
 				25F33CE626D7A94D00B03815 /* DecodableComicsResponse.swift in Sources */,
 				2551F5E626C932710098F9D8 /* ComicsDataManager.swift in Sources */,
+				2569FC2526D910F500DE30D5 /* ComicsDataManagerTableViewDataSource.swift in Sources */,
 				2551F5B326C8A85F0098F9D8 /* AppDelegate.swift in Sources */,
 				25570CC526D212B1008FE363 /* DecodableResponse.swift in Sources */,
 				258BB80626D3031C00362D79 /* ComicsSummaryViewController.swift in Sources */,
@@ -356,11 +363,6 @@
 			isa = PBXTargetDependency;
 			target = 2551F5AE26C8A85F0098F9D8 /* MarvelComicsDemo */;
 			targetProxy = 2551F5D126C8A8620098F9D8 /* PBXContainerItemProxy */;
-		};
-		25D72F5626D37C3500387C0A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			productRef = 25D72F5526D37C3500387C0A /* SDWebImage */;
 		};
 /* End PBXTargetDependency section */
 
@@ -676,11 +678,6 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		25D72F3F26D3693300387C0A /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 25D72F3E26D3693300387C0A /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		25D72F5526D37C3500387C0A /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 25D72F3E26D3693300387C0A /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;

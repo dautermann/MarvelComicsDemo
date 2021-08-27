@@ -11,13 +11,9 @@ import UIKit
 /// which we could derive ComicsSummaryViewController, SeriesSummaryViewController, CreatorsSummaryViewController, etc.
 /// But for version 1's sake, we'll make this ComicsSummaryViewController from the get go and this can be decoupled
 /// as was originally intended in another release.
-protocol ComicsSummaryViewUpdating: NSObject {
-    func dataSourceUpdated()
-}
-
 class ComicsSummaryViewController: UIViewController, UITableViewDelegate, ComicsSummaryViewUpdating {
 
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var summaryTableView: UITableView!
     var comicsDataManager: ComicsDataManager?
 
     override func viewDidLoad() {
@@ -25,14 +21,14 @@ class ComicsSummaryViewController: UIViewController, UITableViewDelegate, Comics
         guard let dataManager = comicsDataManager else {
             fatalError("dataManager not set in prepareForSegue")
         }
-        tableView.prefetchDataSource = dataManager
-        tableView.dataSource = dataManager
-        tableView.delegate = self
+        summaryTableView.prefetchDataSource = dataManager
+        summaryTableView.dataSource = dataManager
+        summaryTableView.delegate = self
     }
 
     func dataSourceUpdated()
     {
-        tableView.reloadData()
+        summaryTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

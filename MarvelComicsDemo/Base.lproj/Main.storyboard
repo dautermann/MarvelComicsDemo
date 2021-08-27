@@ -50,7 +50,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="F0F-7j-lVn" id="Abf-s6-UlM"/>
+                        <outlet property="initialTableView" destination="F0F-7j-lVn" id="YJB-Lt-VFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EntryTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="qVI-fJ-Gou" customClass="EntryTableViewCell">
+                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EntryTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="qVI-fJ-Gou" customClass="EntryTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qVI-fJ-Gou" id="c1g-R1-gIC">
@@ -134,7 +134,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jVT-4f-PUb"/>
                     <connections>
-                        <outlet property="tableView" destination="3wA-id-3Ah" id="zeh-FM-O6m"/>
+                        <outlet property="summaryTableView" destination="3wA-id-3Ah" id="y4D-kq-bY5"/>
                         <segue destination="5vU-fw-6lQ" kind="show" identifier="ShowComicDetail" id="sxd-Yo-4Le"/>
                     </connections>
                 </viewController>

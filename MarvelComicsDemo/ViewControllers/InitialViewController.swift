@@ -18,12 +18,12 @@ class InitialViewController: UIViewController, UITableViewDataSource, UITableVie
         case stories = "stories"
     }
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var initialTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         /// No separator lines for empty cells
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.initialTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
